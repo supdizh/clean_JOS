@@ -193,7 +193,7 @@ grade:
 	  (echo "'make clean' failed.  HINT: Do you have another running instance of JOS?" && exit 1)
 	./grade-lab$(LAB) $(GRADEFLAGS)
 
-handin:
+handin: handin-check
 	@if test -n "`git config remote.handin.url`"; then \
 		echo "Hand in to remote repository using 'git push handin HEAD' ..."; \
 		if ! git push -f handin HEAD; then \
